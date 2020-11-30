@@ -36,12 +36,6 @@ Some screenshots are below:
 
 
 
-<img src='https://github.com/crystalwanyulee/plotly_dash_projects/blob/main/loan_analytics/images/image-20201130174957736.png?raw=true'>
-
-
-
-
-
 # Installation
 
 ```python
