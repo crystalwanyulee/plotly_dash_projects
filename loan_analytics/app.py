@@ -4,14 +4,14 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
 import os
-#os.chdir('C://Users/admin/Documents/Python2/LoanAnalytics/loan_analytics')
+os.chdir('C://Users/admin/Documents/Python2/LoanAnalytics/loan_analytics')
 from loan_analytics.main import *
 import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from collections import Counter
 import time
-#os.chdir('C://Users/admin/Documents/Python2/LoanAnalytics/loan_analytics')
+os.chdir('C://Users/admin/Documents/Python2/LoanAnalytics/loan_analytics')
 from controls import col_names, col_names_with_contributions, empty_schedule_df
 from controls import create_base_barplot, create_base_piechart, clean_contributors, create_loan_form
 from controls import create_summary_label
@@ -51,16 +51,29 @@ button_for_all_loans = dbc.Row(
      dbc.Col(
          dbc.Button("Clear All", outline=False, color="danger", id='button_clear_all', block=True, size='lg'),
          width=4
-         )
+         ),
+     dbc.Modal(
+         [
+             dbc.ModalHeader("Warning"),
+             dbc.ModalBody(
+                 "Do you want to clear out all inputs?"
+             ),
+             dbc.ModalFooter(
+                 [dbc.Button(
+                     "Yes", id="warning_yes_button"
+                 ),
+                  dbc.Button(
+                     "No", id="warning_no_button"
+                 ),]
+             ),
+         ],
+         id="modal-backdrop",
+     ),
      ],
     align='center',
     justify='center',
     style={'margin-top':'30px'}
 )
-
-
-
-
 
 
 
@@ -92,7 +105,7 @@ summary_selector = dbc.Select(
 )
 
 
-schedule_card = dbc.Card(
+schedule_card = dbc.CardBody(
     [
 
      dbc.Row(dbc.Col(summary_selector, width=2), 
@@ -176,9 +189,35 @@ schedule_card = dbc.Card(
          style={'margin-top': '15px'}
          )
      ], 
-    body=True)
+    #body=True
+    )
     
-schedule_tab = dbc.Tab(schedule_card, label='Summary', id='schedule_tab_'+str(i))
+
+tabs = [dbc.Tab(label='All Loans', tab_id='tab-all'),
+        dbc.Tab(label="Loan 1", tab_id="tab-0"),
+        dbc.Tab(label="Loan 2", tab_id="tab-1"),
+        dbc.Tab(label="Loan 3", tab_id="tab-2"),]
+
+schedule_tab = dbc.Card(
+    [
+     dbc.CardHeader(
+         dbc.Tabs(
+             [
+                 dbc.Tab(label='All Loans', tab_id='tab-all'),
+          #       dbc.Tab(label="Loan 1", tab_id="tab-0"),
+            #     dbc.Tab(label="Loan 2", tab_id="tab-1"),
+              #   dbc.Tab(label="Loan 3", tab_id="tab-2"),
+                 ],
+             id='card_tabs',
+             card=True,
+             active_tab='tab-all'    
+             
+             )
+         ),
+     schedule_card
+     ]
+    )
+#dbc.Tab(schedule_card, label='Summary', id='schedule_tab_'+str(i))
 
 
 
@@ -213,11 +252,7 @@ app.layout = dbc.Container(
             [
                 dbc.Col([tabs, 
                          button_for_all_loans], md=3),
-                dbc.Col(dbc.Tabs([schedule_tab], 
-                                 id='schedule_tabs', 
-                                 active_tab = 'tab-0',
-                                 persistence=True, 
-                                 persistence_type='memory'), md=9)
+                dbc.Col([schedule_tab], md=9)
                 ],
             align="begin",
             justify='center',
@@ -255,6 +290,51 @@ def update_summary_selector(checked1, checked2, checked3):
     
     return options
 
+
+
+for i in range(3):
+    @app.callback(
+        [
+         Output('principal_'+str(i), 'value'),
+         Output('interest_rate_'+str(i), 'value'),
+         Output('payment_'+str(i), 'value'), 
+         Output('extra_payment_'+str(i), 'value'),
+         Output('contributor_input_{}_{}'.format(i, 0), 'value'),
+         Output('contributor_input_{}_{}'.format(i, 1), 'value'),
+         Output('contributor_input_{}_{}'.format(i, 2), 'value'),
+         Output('contribution_input_{}_{}'.format(i, 0), 'value'),
+         Output('contribution_input_{}_{}'.format(i, 1), 'value'),
+         Output('contribution_input_{}_{}'.format(i, 2), 'value'),
+         Output("button_show_contribution_"+str(i), "checked")],
+        
+        Input('warning_yes_button', 'n_clicks'),
+    )
+    
+    
+    def store_data(button_clear):
+        
+        changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
+        
+        if ('warning_yes_button' in changed_id):
+            return [0], [0], [0], [0], ['Contributor 1'], ['Contributor 2'], ['Contributor 3'], [0], [0], [0], False
+
+
+@app.callback(
+    Output("modal-backdrop", "is_open"),
+    [Input('button_clear_all', 'n_clicks'), 
+     Input("warning_yes_button", "n_clicks"), 
+     Input("warning_no_button", "n_clicks")],
+)
+
+def toggle_modal(button_clear, button_yes, button_no):
+    
+    changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
+    
+    if ('button_clear_all' in changed_id):
+        return True
+    
+    elif ('warning_yes_button' in changed_id) | ('warning_no_button' in changed_id):
+        return False
 
 
 for i in range(3):
@@ -314,10 +394,17 @@ for i in range(3):
              Input('principal_'+str(i), 'value'),
              Input('interest_rate_'+str(i), 'value'),
              Input('payment_'+str(i), 'value'), 
+             Input('warning_yes_button', 'n_clicks')
             ]
         )        
     
-    def check_include_button(principal, rate, payment):
+    def check_include_button(principal, rate, payment, n_clear):
+        
+        changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
+        
+        if ('warning_yes_button' in changed_id):
+            
+            return [False]
         
         if (principal !=0 ) | (rate != 0) | (payment != 0):
             return [True]
@@ -805,5 +892,5 @@ def toggle_collapse(n, is_open):
 
 # Main
 if __name__ == "__main__":
-    #app.run_server(debug=True, use_reloader=False)
-    app.run_server(debug=False, use_reloader=False)
+    app.run_server(debug=True, use_reloader=False)
+#    app.run_server(debug=False, use_reloader=False)

@@ -295,7 +295,7 @@ def create_loan_form(loan_number):
          ])  
     
     
-    form = dbc.Card(
+    form = dbc.FormGroup(
         [ 
 #         button_for_each_loan,
          button_include_loan,
@@ -304,7 +304,7 @@ def create_loan_form(loan_number):
          button_show_contribution,
          dbc.Collapse(contribution_rows_list, id='contribution_form_'+n),
          ], 
-        body=True
+    #    body=True
     )
     
     return form

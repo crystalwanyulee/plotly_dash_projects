@@ -18,7 +18,9 @@ The application has two major sections:
 
 Some screenshots are below:
 
-![image-20201129232636524](image-20201129232636524-1606712723286.png)
+<img src='images/image-20201129232636524-1606712723286.png'>
+
+
 
 
 
