@@ -52,11 +52,11 @@ def create_base_barplot():
     #fig.update_xaxes(type='category')
     fig.update_layout(barmode='stack',
                       yaxis=dict(range=[0, 5]),
-                      margin={"r":1,"t":1,"l":1,"b":1},
+                      margin={"r":0,"t":0,"l":0,"b":0},
                       plot_bgcolor='rgba(0,0,0,0)',
-                      legend=dict(x=0.5, y=1.1, traceorder='normal',orientation="h",xanchor="center",
-                                 font=dict(size=12)),
-                   #   xaxis_title="Months",
+                      legend=dict(x=0.4, y=-0.2, traceorder='normal',orientation="h",xanchor="center",
+                                 font=dict(size=11)),
+                      xaxis_title="Time",
                       yaxis_title="US Dollars",
                       font=dict(
                         #  family="Courier New, monospace",
@@ -73,7 +73,7 @@ def create_base_piechart():
     fig = go.Figure(go.Pie(labels=['Empty'], values=[100], 
                            textinfo='label',
                            insidetextorientation='radial', marker_colors=['lightgrey']))
-    fig.update_layout(margin={"r":1,"t":1,"l":1,"b":1}, showlegend=False)
+    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0}, showlegend=False)
     
     
     return fig
@@ -101,6 +101,43 @@ def clean_contributors(contributors_list):
 def create_loan_form(loan_number):
     
     n = str(loan_number)
+    
+    basic_form0_title = dbc.Row(
+                        [
+                            dbc.Col([dbc.FormGroup(dbc.Label("Loan Type", style=subtitle_style))], width=6),
+                            dbc.Col([dbc.FormGroup(dbc.Label("Included", style=subtitle_style))], width=6),
+                            ],
+                        justify='around', 
+                        align='center',
+                        style={'margin-top':'15px'}
+                        )
+                    
+    basic_form0_menu = dbc.Row(
+                        [
+                            dbc.Col(
+                                [
+                                    dbc.FormGroup(dcc.Dropdown(
+                                        id="loan_type_"+n,
+                                        options=[
+                                            {'label': 'Personal Loan', 'value': 'personal_loan'},
+                                            {'label': 'Auto Loan', 'value': 'auto_loan'},
+                                            {'label': 'Student Loan', 'value': 'student_loan'},
+                                            {'label': 'Mortgage Loan', 'value': 'mortgage_loan'},
+                                            {'label': 'Home-Equity Loan', 'value': 'home_equity_loan'},
+                                            {'label': 'Small Business Loan', 'value': 'small_business_loan'},
+                                            {'label': 'Other Loan', 'value': 'other_loan'}
+                                        ],
+                                        placeholder="Select a type",
+                                        )
+                                        )
+                                    ],
+                                width=6
+                                ),
+                            dbc.Col([dbc.FormGroup(dbc.Checkbox(id='button_include_'+n))], width=6, align='center')
+                            
+                            ]
+                        )
+    
     input_principal = dbc.FormGroup(
                             [
                                 dbc.Label("Principal", style=subtitle_style),
@@ -137,7 +174,6 @@ def create_loan_form(loan_number):
                                           value=0)
                                 ]
                             )
-    
     
 
     
@@ -288,17 +324,14 @@ def create_loan_form(loan_number):
          ])   
     
     
-    button_include_loan = dbc.FormGroup(
-        [
-         dbc.Checkbox(id='button_include_'+n),
-         dbc.Label("Included", html_for="standalone-checkbox"),
-         ])  
+ 
     
     
     form = dbc.FormGroup(
         [ 
 #         button_for_each_loan,
-         button_include_loan,
+         basic_form0_title,
+         basic_form0_menu,
          basic_form1,
          basic_form2,
          button_show_contribution,

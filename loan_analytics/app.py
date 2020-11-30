@@ -23,6 +23,14 @@ app = dash.Dash(external_stylesheets=[external_stylesheets])
 app.config.suppress_callback_exceptions = True
 
 
+loan_type_dict =  {'personal_loan': 'Personal Loan', 
+                   'auto_loan': 'Auto Loan',
+                   'student_loan': 'Student Loan',
+                   'mortgage_loan': 'Mortgage Loan',
+                   'home_equity_loan': 'Home-Equity Loan',
+                   'small_business_loan': 'Small Business Loan',
+                   'other_loan': 'Other Loan'}
+
 
 summary_selector_options = [
         {"label": "All Loans", "value": "all"},
@@ -32,24 +40,41 @@ summary_selector_options = [
     ]
 
 
+def make_item(i):
+    # we use this function to make the example items to avoid code duplication
+    return dbc.Card(
+        [
+            dbc.CardHeader(
+                html.H2(
+                    dbc.Button(
+                        "+ Loan {0:d}".format(i+1),
+                        color='link',
+                        id=f"group-{i}-toggle",
+                      #  style={'fontColor': '#008CBA'}
+                    ),
+                    style={'font-weight': 'bold'}
+                )
+            ),
+            dbc.Collapse(
+                dbc.CardBody(create_loan_form(i)),
+                id=f"collapse-{i}",
+            ),
+        ]
+    )
+
+
  
-tabs = dbc.Tabs(
-    [
-        dbc.Tab(create_loan_form(0), label="Loan 1", id='tab_0'),
-        dbc.Tab(create_loan_form(1), label="Loan 2", id='tab_1'),
-        dbc.Tab(create_loan_form(2), label="Loan 3", id='tab_2'),
-    ],
-    id='loan_tabs'
-)
+
+
 
 button_for_all_loans = dbc.Row(
     [
      dbc.Col(
-         dbc.Button("Calculate", outline=False, color="primary", id='button_calculate', block=True, size="lg"),
+         dbc.Button("Calculate", outline=False, color="primary", id='button_calculate', block=True, size="mg"),
          width=4
          ),
      dbc.Col(
-         dbc.Button("Clear All", outline=False, color="danger", id='button_clear_all', block=True, size='lg'),
+         dbc.Button("Clear All", outline=False, color="danger", id='button_clear_all', block=True, size='mg'),
          width=4
          ),
      dbc.Modal(
@@ -93,25 +118,8 @@ empty_table = dbc.Table.from_dataframe(empty_schedule_df,
 
 
 
-summary_selector = dbc.Select(
-    id="summary_selector",
-    options=[
-        {"label": "All Loans", "value": "0"},
-        {"label": "Loan 1", "value": "1"},
-        {"label": "Loan 2", "value": "2", "disabled": True},
-        {"label": "Loan 3", "value": "3", "disabled": True}
-    ],
-    value='0'
-)
-
-
 schedule_card = dbc.CardBody(
     [
-
-     dbc.Row(dbc.Col(summary_selector, width=2), 
-             justify='begin', 
-             align='center', 
-             style={'margin-bottom':'15px'}),
         
      dbc.Row(
          [
@@ -193,24 +201,23 @@ schedule_card = dbc.CardBody(
     )
     
 
-tabs = [dbc.Tab(label='All Loans', tab_id='tab-all'),
-        dbc.Tab(label="Loan 1", tab_id="tab-0"),
-        dbc.Tab(label="Loan 2", tab_id="tab-1"),
-        dbc.Tab(label="Loan 3", tab_id="tab-2"),]
+schedule_tab_list = [dbc.Tab(label='Summary', tab_id='tab-all'),
+        dbc.Tab(label="Loan 1", tab_id="tab-0", id='summary_tab_0'),
+        dbc.Tab(label="Loan 2", tab_id="tab-1", id='summary_tab_1'),
+        dbc.Tab(label="Loan 3", tab_id="tab-2", id='summary_tab_2'),]
 
 schedule_tab = dbc.Card(
     [
      dbc.CardHeader(
          dbc.Tabs(
              [
-                 dbc.Tab(label='All Loans', tab_id='tab-all'),
-          #       dbc.Tab(label="Loan 1", tab_id="tab-0"),
-            #     dbc.Tab(label="Loan 2", tab_id="tab-1"),
-              #   dbc.Tab(label="Loan 3", tab_id="tab-2"),
+                 dbc.Tab(label='Schedule Report', tab_id='tab-00'),
                  ],
              id='card_tabs',
              card=True,
-             active_tab='tab-all'    
+             active_tab='tab-00',
+             persistence=True,
+             persistence_type='memory'
              
              )
          ),
@@ -250,9 +257,11 @@ app.layout = dbc.Container(
             ),
         dbc.Row(
             [
-                dbc.Col([tabs, 
+                dbc.Col([make_item(0),
+                         make_item(1),
+                         make_item(2),
                          button_for_all_loans], md=3),
-                dbc.Col([schedule_tab], md=9)
+                dbc.Col([schedule_tab],id='summary_section',  md=9)
                 ],
             align="begin",
             justify='center',
@@ -266,27 +275,42 @@ app.layout = dbc.Container(
 
 
 
-# Show contribution form
-for i in range(3):
-    @app.callback(
-        Output("contribution_form_"+str(i), "is_open"),
-        [Input("button_show_contribution_"+str(i), "checked")],
-    )
-    
-    def toggle_collapse(checked):
-        return checked
-
-
 
 @app.callback(
-    Output("summary_selector", "options"),
+    [Output(f"collapse-{i}", "is_open") for i in range(3)],
+    [Input(f"group-{i}-toggle", "n_clicks") for i in range(3)] + [Input("button_calculate", "n_clicks")],
+    [State(f"collapse-{i}", "is_open") for i in range(3)],
+)
+def toggle_accordion(n1, n2, n3, button_calculate, is_open1, is_open2, is_open3):
+    
+    changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
+       
+
+    if ('group-0-toggle' in changed_id):
+        return not is_open1, is_open2, is_open3
+    
+    elif ('group-1-toggle' in changed_id):
+        return is_open1, not is_open2, is_open3
+    
+    elif ('group-2-toggle' in changed_id):
+        return is_open1, is_open2, not is_open3
+    
+    
+    elif ("button_calculate" in changed_id):
+        return False, False, False
+              
+
+        
+
+@app.callback(
+    Output("card_tabs", "children"),
     [Input("button_include_"+str(i), "checked") for i in range(3)],
 )
 
 def update_summary_selector(checked1, checked2, checked3):
         
     selector = [True] + [checked1, checked2, checked3]
-    options = [summary_selector_options[i] for i, s in enumerate(selector) if s == True] 
+    options = [schedule_tab_list[i] for i, s in enumerate(selector) if s == True] 
     
     return options
 
@@ -311,7 +335,7 @@ for i in range(3):
     )
     
     
-    def store_data(button_clear):
+    def clear_inputs(button_clear):
         
         changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
         
@@ -335,6 +359,89 @@ def toggle_modal(button_clear, button_yes, button_no):
     
     elif ('warning_yes_button' in changed_id) | ('warning_no_button' in changed_id):
         return False
+
+
+
+@app.callback(
+    [Output(f"group-{i}-toggle", "children") for i in range(3)],
+    [Input(f"loan_type_{i}", 'value') for i in range(3)] + [Input("button_calculate", "n_clicks")]
+)
+def update_loan_name(type0, type1, type2, button_calculate, button_clear):
+    
+    changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
+    
+    if ('button_calculate' in changed_id):
+    
+        types = [type0, type1, type2]
+        
+        names = []
+        
+        for i, loan_type in enumerate(types):
+            if loan_type is not None:
+                names.append(loan_type_dict[loan_type])
+
+            else:
+                names.append(f'+ Loan {i}')
+        
+        names = clean_contributors(names)
+            
+        return [names[0]], [names[1]], [names[2]]
+
+            
+
+
+
+for i in range(3):
+
+    @app.callback(
+        [Output(f'summary_tab_{i}', 'label')],
+        [Input(f"group-{i}-toggle", "children"), Input("button_calculate", "n_clicks"), Input("warning_yes_button", "n_clicks")]
+    )
+    def update_loan_name(name, button_calculate, button_clear):
+        
+        changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
+        
+        if ('button_calculate' in changed_id):
+                
+            return name[0]
+
+        
+
+# Show contribution form
+for i in range(3):
+    @app.callback(
+        Output("contribution_form_"+str(i), "is_open"),
+        [Input("button_show_contribution_"+str(i), "checked")],
+    )
+    
+    def toggle_collapse(checked):
+        return checked
+
+
+
+for i in range(3):
+    @app.callback(
+        [
+            Output("button_include_"+str(i), "checked"),
+            ],
+        [
+             Input('principal_'+str(i), 'value'),
+             Input('interest_rate_'+str(i), 'value'),
+             Input('payment_'+str(i), 'value'), 
+             Input('warning_yes_button', 'n_clicks')
+            ]
+        )        
+    
+    def check_include_button(principal, rate, payment, n_clear):
+        
+        changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
+        
+        if ('warning_yes_button' in changed_id):
+            
+            return [False]
+        
+        if (principal !=0 ) | (rate != 0) | (payment != 0):
+            return [True]
 
 
 for i in range(3):
@@ -385,29 +492,9 @@ for i in range(3):
             return dash.no_update
 
 
-for i in range(3):
-    @app.callback(
-        [
-            Output("button_include_"+str(i), "checked"),
-            ],
-        [
-             Input('principal_'+str(i), 'value'),
-             Input('interest_rate_'+str(i), 'value'),
-             Input('payment_'+str(i), 'value'), 
-             Input('warning_yes_button', 'n_clicks')
-            ]
-        )        
-    
-    def check_include_button(principal, rate, payment, n_clear):
-        
-        changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
-        
-        if ('warning_yes_button' in changed_id):
-            
-            return [False]
-        
-        if (principal !=0 ) | (rate != 0) | (payment != 0):
-            return [True]
+
+
+
 
 
 
@@ -468,6 +555,8 @@ def store_data_to_all(button_calculate,
                 
 
 
+
+
 i=0
 #for i in range(3):
 
@@ -477,7 +566,7 @@ i=0
       Output('time_text_'+str(i), 'children'),
       ],
      [Input("button_calculate", "n_clicks"),
-      Input("summary_selector", "value")],
+      Input("card_tabs", "active_tab")],
      [State("loan_data0", "data"),
       State("loan_data1", "data"),
       State("loan_data2", "data"),
@@ -487,6 +576,8 @@ i=0
 
 
 def update_summary(button_calculate, selector, data0, data1, data2, data_all):
+    
+    selector = selector.split('-')[1]
     
     changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
     data_list = [data0, data1, data2, data_all]
@@ -516,7 +607,7 @@ i=0
 @app.callback(
      [Output('schedule_table_'+str(i), "children")],
      [Input("button_calculate", "n_clicks"),
-      Input("summary_selector", "value")],
+      Input("card_tabs", "active_tab")],
      [State("loan_data0", "data"),
       State("loan_data1", "data"),
       State("loan_data2", "data"),
@@ -527,6 +618,7 @@ i=0
 
 def update_table(button_calculate, selector, data0, data1, data2, data_all):
     
+    selector = selector.split('-')[1]
     changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
     data_list = [data0, data1, data2, data_all]
     
@@ -558,7 +650,7 @@ i=0
 @app.callback(
      [Output('barplot_'+str(i), "figure")],
      [Input("button_calculate", "n_clicks"),
-      Input("summary_selector", "value")],
+      Input("card_tabs", "active_tab")],
      [State("loan_data0", "data"),
       State("loan_data1", "data"),
       State("loan_data2", "data"),
@@ -568,6 +660,8 @@ i=0
 
 
 def update_barplot(button_calculate, selector, data0, data1, data2, data_all):
+    
+    selector = selector.split('-')[1]
 
     changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
     data_list = [data0, data1, data2, data_all]
@@ -605,10 +699,10 @@ def update_barplot(button_calculate, selector, data0, data1, data2, data_all):
                   secondary_y=True)
     
     fig.update_layout(barmode='stack',
-                      margin={"r":1,"t":1,"l":1,"b":1},
+                      margin={"r":0,"t":0,"l":0,"b":0},
                       plot_bgcolor='rgba(0,0,0,0)',
-                      legend=dict(x=0.5, y=1.1, traceorder='normal',orientation="h",xanchor="center",
-                                 font=dict(size=12)),
+                      legend=dict(x=0.4, y=-0.2, traceorder='normal',orientation="h",xanchor="center",
+                                 font=dict(size=11)),
                       xaxis_title="Time",
                       yaxis_title="US Dollars",
                       font=dict(size=12),
@@ -632,7 +726,7 @@ i=0
      [Output('pie_chart_'+str(i), "figure")],
      [
       Input("button_calculate", "n_clicks"),
-      Input("summary_selector", "value"),
+      Input("card_tabs", "active_tab"),
       Input("button_show_contribution_"+str(0), "checked"),
       Input("button_show_contribution_"+str(1), "checked"),
       Input("button_show_contribution_"+str(2), "checked")
@@ -651,6 +745,7 @@ def update_piechart(button_calculate, selector, check0, check1, check2,
                     data0, data1, data2, data_all, 
                    ):
 
+    selector = selector.split('-')[1]
     changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
     data_list = [data0, data1, data2, data_all]
     check_list = [check0, check1, check2]
@@ -694,7 +789,7 @@ def update_piechart(button_calculate, selector, check0, check1, check2,
             
             all_payment = np.array([payment, extra_payment]+contributions)
             all_payment = all_payment/all_payment.sum()
-            payers = ['My Payment', 'My Extra Payment', 'Contributor 1', 'Contributor 2', 'Contributor 3']
+            payers = ['My Payment', 'My Extra Payment'] + contributors
             
         
         else:
@@ -721,10 +816,13 @@ def update_piechart(button_calculate, selector, check0, check1, check2,
      
 @app.callback(
     Output('impact_plot_title', 'children'),
-    Input("summary_selector", "value")
+    Input("card_tabs", "active_tab")
     )
 
 def update_impact_plot_title(summary_selector):
+    
+    summary_selector = summary_selector .split('-')[1]
+    
     if summary_selector == 'all':
         return 'Loan Comparison'
     else:
@@ -736,7 +834,7 @@ i=0
      [Output('impact_barplot_'+str(i), "figure")],
      [
       Input("button_calculate", "n_clicks"),
-      Input("summary_selector", "value"),
+      Input("card_tabs", "active_tab"),
       Input('impact_barplot_selector_' + str(i), 'value'),
       Input("button_show_contribution_"+str(0), "checked"),
       Input("button_show_contribution_"+str(1), "checked"),
@@ -753,6 +851,8 @@ i=0
 def update_impact_chart(button_calculate, summary_selector, selector, 
                         check0, check1, check2, 
                         data0, data1, data2, data_all):
+    
+    summary_selector = summary_selector .split('-')[1]
     
     changed_id = [p['prop_id'] for p in dash.callback_context.triggered][0]
     data_list = [data0, data1, data2, data_all]
@@ -892,5 +992,5 @@ def toggle_collapse(n, is_open):
 
 # Main
 if __name__ == "__main__":
-    app.run_server(debug=True, use_reloader=False)
-#    app.run_server(debug=False, use_reloader=False)
+   # app.run_server(debug=True, use_reloader=False)
+    app.run_server(debug=False, use_reloader=False)
