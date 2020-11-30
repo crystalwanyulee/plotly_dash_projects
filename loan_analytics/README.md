@@ -18,7 +18,25 @@ The application has two major sections:
 
 Some screenshots are below:
 
+<img src='https://github.com/crystalwanyulee/plotly_dash_projects/blob/main/loan_analytics/images/image-20201130174910236.png?raw=true'>
 
+
+
+<img src='https://github.com/crystalwanyulee/plotly_dash_projects/blob/main/loan_analytics/images/image-20201130174914800.png?raw=true'>
+
+
+
+<img src='https://github.com/crystalwanyulee/plotly_dash_projects/blob/main/loan_analytics/images/image-20201130174905330.png?raw=true'>
+
+
+
+<img src='https://github.com/crystalwanyulee/plotly_dash_projects/blob/main/loan_analytics/images/image-20201130174900351.png?raw=true'>
+
+
+
+
+
+<img src='https://github.com/crystalwanyulee/plotly_dash_projects/blob/main/loan_analytics/images/image-20201130174957736.png?raw=true'>
 
 
 
