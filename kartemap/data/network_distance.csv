@@ -1,0 +1,450 @@
+Atlanta,Baltimore,927.8876018253468
+Atlanta,Boston,1522.6120159937245
+Atlanta,Charlotte,364.9812351896804
+Atlanta,Chicago,974.9571337646737
+Atlanta,Dallas,1160.4602204550501
+Atlanta,Denver,1930.0176814922274
+Atlanta,Detroit,956.5183454137982
+Atlanta,Houston,1109.1148361279909
+Atlanta,Los Angeles,3132.5194523834407
+Atlanta,Miami,956.9183918329701
+Atlanta,Minneapolis,1459.0020341582442
+Atlanta,Orlando,649.5066059922419
+Atlanta,Philadelphia,1072.14746071075
+Atlanta,Phoenix,2554.546295909268
+Atlanta,Portland,3495.791991032561
+Atlanta,San Antonio,1406.8440879416119
+Atlanta,San Diego,3044.1232495092236
+Atlanta,San Francisco,3442.2203462027865
+Atlanta,Seattle,3511.2349258854238
+Atlanta,St. Louis,778.9752454400805
+Atlanta,Tampa,653.2655542302757
+Atlanta,Washington,880.4426978350568
+Baltimore,Atlanta,927.8876018253468
+Baltimore,Boston,594.7540907774555
+Baltimore,Charlotte,580.6465772424323
+Baltimore,Chicago,1000.1286974437357
+Baltimore,Denver,2399.4715232997914
+Baltimore,Detroit,657.7399968583057
+Baltimore,Houston,1987.768656550616
+Baltimore,Los Angeles,3748.157164931732
+Baltimore,Miami,1522.218738075282
+Baltimore,Minneapolis,1506.5800281537872
+Baltimore,Orlando,1266.5284027928944
+Baltimore,Philadelphia,145.04592169295375
+Baltimore,Phoenix,3216.551222991967
+Baltimore,Portland,727.0657338724069
+Baltimore,San Antonio,2264.592458512931
+Baltimore,San Diego,3693.3821903817134
+Baltimore,San Francisco,3953.8413017569164
+Baltimore,Seattle,3757.432121769111
+Baltimore,St. Louis,1187.3780175981099
+Baltimore,Tampa,1355.5060393124343
+Boston,Atlanta,1522.6120159937245
+Boston,Baltimore,594.7540907774555
+Boston,Charlotte,1171.3241747670543
+Boston,Chicago,1394.7374480461144
+Boston,Denver,2822.8667067449173
+Boston,Detroit,1017.670351820932
+Boston,Houston,2589.415530792333
+Boston,Los Angeles,4202.209710664989
+Boston,Miami,2025.0155552947201
+Boston,Minneapolis,1808.983024521943
+Boston,Orlando,1804.1142366613271
+Boston,Philadelphia,450.6488368365631
+Boston,Phoenix,3701.4616973509874
+Boston,Portland,4083.3538274927805
+Boston,San Diego,4164.546807400274
+Boston,San Francisco,4351.855780700832
+Boston,Seattle,4016.4147257822906
+Boston,St. Louis,1684.4868788412775
+Boston,Tampa,1906.7187389781657
+Boston,Washington,642.1828832683137
+Charlotte,Atlanta,364.9812351896804
+Charlotte,Baltimore,580.6465772424323
+Charlotte,Boston,1171.3241747670543
+Charlotte,Chicago,964.511582527669
+Charlotte,Denver,2152.759138074275
+Charlotte,Detroit,804.5802587357894
+Charlotte,Houston,1468.8715534353476
+Charlotte,Los Angeles,3420.016695866533
+Charlotte,Miami,1046.2787241102524
+Charlotte,Minneapolis,1496.7849808956319
+Charlotte,Orlando,753.1007710918353
+Charlotte,Philadelphia,721.6101931809109
+Charlotte,Phoenix,2854.549058006627
+Charlotte,Portland,3672.329456809136
+Charlotte,San Antonio,1762.4575387473715
+Charlotte,San Diego,3342.5002278148345
+Charlotte,San Francisco,3695.3736615618054
+Charlotte,Seattle,3667.9194240363313
+Charlotte,St. Louis,925.816755073501
+Charlotte,Tampa,816.6324521360193
+Charlotte,Washington,532.5663280547369
+Chicago,Atlanta,974.9571337646737
+Chicago,Baltimore,1000.1286974437357
+Chicago,Boston,1394.7374480461144
+Chicago,Charlotte,964.511582527669
+Chicago,Denver,1429.5246050976848
+Chicago,Detroit,377.37171223632623
+Chicago,Houston,1488.8089164220253
+Chicago,Los Angeles,2807.6181912202373
+Chicago,Miami,1926.484669141388
+Chicago,Minneapolis,537.7606504234476
+Chicago,Orlando,1617.4382302707252
+Chicago,Philadelphia,1090.9175197420343
+Chicago,Phoenix,2317.2783554765756
+Chicago,Portland,2799.06608200877
+Chicago,San Antonio,1676.185772906477
+Chicago,San Diego,2772.9634883930057
+Chicago,San Francisco,2971.04238733937
+Chicago,Seattle,2768.974988194829
+Chicago,St. Louis,415.25657339783885
+Chicago,Tampa,1628.198132438448
+Chicago,Washington,984.6271975897037
+Dallas,Atlanta,1160.4602204550501
+Dallas,Houston,385.2932410620787
+Dallas,San Antonio,398.40526266349207
+Dallas,San Francisco,2374.940480450924
+Dallas,Seattle,2687.281077433367
+Dallas,St. Louis,878.1628263040623
+Denver,Atlanta,1930.0176814922274
+Denver,Baltimore,2399.4715232997914
+Denver,Boston,2822.8667067449173
+Denver,Charlotte,2152.759138074275
+Denver,Chicago,1429.5246050976848
+Denver,Detroit,1806.779069485811
+Denver,Houston,1386.6544273158447
+Denver,Los Angeles,1387.0237836453864
+Denver,Miami,2750.27581750344
+Denver,Minneapolis,1094.194382374921
+Denver,Orlando,2488.774862761198
+Denver,Philadelphia,2506.6407104644622
+Denver,Phoenix,968.5010512556014
+Denver,Portland,1595.493266040848
+Denver,San Antonio,1278.0934995447626
+Denver,San Diego,1372.475615166354
+Denver,San Francisco,1556.3919644310706
+Denver,Seattle,1648.0136248755487
+Denver,St. Louis,1238.5077288681794
+Denver,Tampa,2424.4334410257693
+Denver,Washington,2375.021719807769
+Detroit,Atlanta,956.5183454137982
+Detroit,Baltimore,657.7399968583057
+Detroit,Boston,1017.670351820932
+Detroit,Charlotte,804.5802587357894
+Detroit,Chicago,377.37171223632623
+Detroit,Denver,1806.779069485811
+Detroit,Houston,1730.1520700840647
+Detroit,Los Angeles,3184.5396600909316
+Detroit,Miami,1842.7975661280639
+Detroit,Minneapolis,850.1803029581444
+Detroit,Orlando,1540.3215095805185
+Detroit,Philadelphia,729.5661317677183
+Detroit,Phoenix,2688.8808807263704
+Detroit,Portland,3143.3582957013887
+Detroit,San Antonio,1954.312038551808
+Detroit,San Diego,3148.1011216816523
+Detroit,San Francisco,3345.3823731274592
+Detroit,Seattle,3101.2568587383594
+Detroit,St. Louis,708.0776320387283
+Detroit,Tampa,1581.2493587761685
+Detroit,Washington,652.0705318666243
+Houston,Atlanta,1109.1148361279909
+Houston,Baltimore,2005.1521653021284
+Houston,Boston,2589.415530792333
+Houston,Charlotte,1468.8715534353476
+Houston,Chicago,1488.8089164220253
+Houston,Dallas,385.2932410620787
+Houston,Denver,1386.6544273158447
+Houston,Detroit,1730.1520700840647
+Houston,Los Angeles,2219.2154558276043
+Houston,Miami,1551.5453025835232
+Houston,Minneapolis,1663.8890403536682
+Houston,Orlando,1366.537467764494
+Houston,Philadelphia,2131.651504911377
+Houston,Phoenix,1623.8436855003667
+Houston,Portland,2936.3978800979025
+Houston,San Antonio,306.66054648523453
+Houston,San Diego,2097.1779281737945
+Houston,San Francisco,2631.5858535362
+Houston,Seattle,3015.613767586163
+Houston,St. Louis,1073.9248112750015
+Houston,Tampa,1257.2015843048418
+Houston,Washington,1943.6017053798387
+Los Angeles,Atlanta,3132.5194523834407
+Los Angeles,Baltimore,3748.157164931732
+Los Angeles,Boston,4202.209710664989
+Los Angeles,Charlotte,3420.016695866533
+Los Angeles,Chicago,2807.6181912202373
+Los Angeles,Denver,1387.0237836453864
+Los Angeles,Detroit,3184.5396600909316
+Los Angeles,Houston,2219.2154558276043
+Los Angeles,Miami,3768.872535386383
+Los Angeles,Minneapolis,2470.983929026752
+Los Angeles,Orlando,3568.9897825950316
+Los Angeles,Philadelphia,3864.8094345826057
+Los Angeles,Phoenix,595.6154637267862
+Los Angeles,Portland,1341.4829245065985
+Los Angeles,San Antonio,1948.0298515289344
+Los Angeles,San Diego,175.59415942752855
+Los Angeles,San Francisco,543.0608952447033
+Los Angeles,Seattle,1535.1580007462585
+Los Angeles,St. Louis,2562.1527779148028
+Los Angeles,Tampa,3472.759667359952
+Los Angeles,Washington,3719.0853255768675
+Miami,Atlanta,956.9183918329701
+Miami,Baltimore,1522.218738075282
+Miami,Boston,2025.0155552947201
+Miami,Charlotte,1046.2787241102524
+Miami,Chicago,1926.484669141388
+Miami,Denver,2750.27581750344
+Miami,Detroit,1842.7975661280639
+Miami,Houston,1551.5453025835232
+Miami,Los Angeles,3768.872535386383
+Miami,Minneapolis,2415.21818382096
+Miami,Orlando,309.0619780624654
+Miami,Philadelphia,1630.5991579220715
+Miami,Phoenix,3173.2597792918505
+Miami,San Diego,3648.71687341067
+Miami,San Francisco,4160.181961130775
+Miami,Seattle,4383.857643364853
+Miami,St. Louis,1719.5074707892418
+Miami,Tampa,328.79133198291174
+Miami,Washington,1479.8932055384055
+Minneapolis,Atlanta,1459.0020341582442
+Minneapolis,Baltimore,1506.5800281537872
+Minneapolis,Boston,1808.983024521943
+Minneapolis,Charlotte,1496.7849808956319
+Minneapolis,Chicago,537.7606504234476
+Minneapolis,Denver,1094.194382374921
+Minneapolis,Detroit,850.1803029581444
+Minneapolis,Houston,1663.8890403536682
+Minneapolis,Los Angeles,2470.983929026752
+Minneapolis,Miami,2415.21818382096
+Minneapolis,Orlando,2108.492459554068
+Minneapolis,Philadelphia,1577.8638124590243
+Minneapolis,Phoenix,2053.559058520675
+Minneapolis,Portland,2295.120268740311
+Minneapolis,San Antonio,1764.9362327622905
+Minneapolis,San Diego,2465.773015711439
+Minneapolis,San Francisco,2556.992477095792
+Minneapolis,Seattle,2251.128543778746
+Minneapolis,St. Louis,721.1292540170878
+Minneapolis,Tampa,2102.3414392224504
+Minneapolis,Washington,1497.6331504876568
+Orlando,Atlanta,649.5066059922419
+Orlando,Baltimore,1266.5284027928944
+Orlando,Boston,1804.1142366613271
+Orlando,Charlotte,753.1007710918353
+Orlando,Chicago,1617.4382302707252
+Orlando,Denver,2488.774862761198
+Orlando,Detroit,1540.3215095805185
+Orlando,Houston,1374.5221313504082
+Orlando,Los Angeles,3568.9897825950316
+Orlando,Miami,309.0619780624654
+Orlando,Minneapolis,2108.492459554068
+Orlando,Philadelphia,1386.227462470718
+Orlando,Phoenix,2975.13192405863
+Orlando,San Antonio,1675.3765520392799
+Orlando,San Diego,3458.0934879963806
+Orlando,San Francisco,3936.20388878576
+Orlando,Seattle,4109.912299012341
+Orlando,St. Louis,1418.6659989900465
+Orlando,Washington,1221.6593767853703
+Philadelphia,Atlanta,1072.14746071075
+Philadelphia,Baltimore,145.04592169295375
+Philadelphia,Boston,450.6488368365631
+Philadelphia,Charlotte,721.6101931809109
+Philadelphia,Chicago,1090.9175197420343
+Philadelphia,Denver,2506.6407104644622
+Philadelphia,Detroit,729.5661317677183
+Philadelphia,Houston,2131.651504911377
+Philadelphia,Los Angeles,3864.8094345826057
+Philadelphia,Miami,1630.5991579220715
+Philadelphia,Minneapolis,1577.8638124590243
+Philadelphia,Orlando,1386.227462470718
+Philadelphia,Phoenix,3339.8738751543015
+Philadelphia,Portland,3872.458540907584
+Philadelphia,San Antonio,2407.060795398617
+Philadelphia,San Diego,3813.957084421246
+Philadelphia,San Francisco,4057.5342020395337
+Philadelphia,Seattle,3827.3654326747164
+Philadelphia,St. Louis,1309.1812821106814
+Philadelphia,Tampa,1480.5032544126504
+Philadelphia,Washington,191.80886670198305
+Phoenix,Atlanta,2554.546295909268
+Phoenix,Baltimore,3216.551222991967
+Phoenix,Boston,3701.4616973509874
+Phoenix,Charlotte,2854.549058006627
+Phoenix,Chicago,2317.2783554765756
+Phoenix,Denver,968.5010512556014
+Phoenix,Detroit,2688.8808807263704
+Phoenix,Houston,1623.8436855003667
+Phoenix,Los Angeles,595.6154637267862
+Phoenix,Miami,3173.2597792918505
+Phoenix,Minneapolis,2053.559058520675
+Phoenix,Orlando,2975.13192405863
+Phoenix,Philadelphia,3339.8738751543015
+Phoenix,Portland,1624.62033476146
+Phoenix,San Antonio,1356.2178437010464
+Phoenix,San Diego,489.5930063088989
+Phoenix,San Francisco,1047.475686680119
+Phoenix,Seattle,1781.0330447409337
+Phoenix,St. Louis,2030.6927061488527
+Phoenix,Tampa,2877.843724477108
+Phoenix,Washington,3184.484780719079
+Portland,Atlanta,3495.791991032561
+Portland,Baltimore,727.0657338724069
+Portland,Boston,4083.3538274927805
+Portland,Charlotte,3672.329456809136
+Portland,Chicago,2799.06608200877
+Portland,Denver,1595.493266040848
+Portland,Detroit,3143.3582957013887
+Portland,Houston,2936.3978800979025
+Portland,Los Angeles,1341.4829245065985
+Portland,Minneapolis,2295.120268740311
+Portland,Philadelphia,3872.458540907584
+Portland,Phoenix,1624.62033476146
+Portland,San Diego,1500.820415880312
+Portland,San Francisco,885.3554175235907
+Portland,Seattle,207.9791102916884
+Portland,Washington,3782.61036298944
+San Antonio,Atlanta,1406.8440879416119
+San Antonio,Baltimore,2264.592458512931
+San Antonio,Charlotte,1762.4575387473715
+San Antonio,Chicago,1676.185772906477
+San Antonio,Dallas,398.40526266349207
+San Antonio,Denver,1278.0934995447626
+San Antonio,Detroit,1954.312038551808
+San Antonio,Houston,309.37540242333455
+San Antonio,Los Angeles,1948.0298515289344
+San Antonio,Minneapolis,1764.9362327622905
+San Antonio,Orlando,1675.3765520392799
+San Antonio,Philadelphia,2407.060795398617
+San Antonio,Phoenix,1356.2178437010464
+San Antonio,San Diego,1817.6931173605255
+San Antonio,San Francisco,2385.1066744065542
+San Antonio,Seattle,2855.4174547709213
+San Antonio,St. Louis,1264.8270600412063
+San Antonio,Tampa,1564.7981204569285
+San Antonio,Washington,2191.7863847148114
+San Diego,Atlanta,3044.1232495092236
+San Diego,Baltimore,3693.3821903817134
+San Diego,Boston,4164.546807400274
+San Diego,Charlotte,3342.5002278148345
+San Diego,Chicago,2772.9634883930057
+San Diego,Denver,1372.475615166354
+San Diego,Detroit,3148.1011216816523
+San Diego,Houston,2112.406810268256
+San Diego,Los Angeles,175.59415942752855
+San Diego,Miami,3648.71687341067
+San Diego,Minneapolis,2465.773015711439
+San Diego,Orlando,3458.0934879963806
+San Diego,Philadelphia,3813.957084421246
+San Diego,Phoenix,489.5930063088989
+San Diego,Portland,1500.820415880312
+San Diego,San Antonio,1817.6931173605255
+San Diego,San Francisco,718.65216244201
+San Diego,Seattle,1690.2832401568667
+San Diego,St. Louis,2506.0453292966663
+San Diego,Washington,3662.5217911497384
+San Francisco,Atlanta,3442.2203462027865
+San Francisco,Baltimore,3953.8413017569164
+San Francisco,Boston,4351.855780700832
+San Francisco,Charlotte,3695.3736615618054
+San Francisco,Chicago,2971.04238733937
+San Francisco,Denver,1556.3919644310706
+San Francisco,Detroit,3345.3823731274592
+San Francisco,Houston,2631.5858535362
+San Francisco,Los Angeles,543.0608952447033
+San Francisco,Miami,4160.181961130775
+San Francisco,Minneapolis,2556.992477095792
+San Francisco,Orlando,3936.20388878576
+San Francisco,Philadelphia,4057.5342020395337
+San Francisco,Phoenix,1047.475686680119
+San Francisco,Portland,885.3554175235907
+San Francisco,San Antonio,2385.1066744065542
+San Francisco,San Diego,718.65216244201
+San Francisco,Seattle,1091.9684637732169
+San Francisco,St. Louis,2792.5475617113
+San Francisco,Washington,3930.356887726172
+Seattle,Atlanta,3511.2349258854238
+Seattle,Baltimore,3757.432121769111
+Seattle,Boston,4016.4147257822906
+Seattle,Charlotte,3667.9194240363313
+Seattle,Chicago,2768.974988194829
+Seattle,Denver,1648.0136248755487
+Seattle,Detroit,3101.2568587383594
+Seattle,Houston,3015.613767586163
+Seattle,Los Angeles,1535.1580007462585
+Seattle,Miami,4383.857643364853
+Seattle,Minneapolis,2251.128543778746
+Seattle,Orlando,4109.912299012341
+Seattle,Philadelphia,3827.3654326747164
+Seattle,Phoenix,1781.0330447409337
+Seattle,Portland,207.9791102916884
+Seattle,San Antonio,2855.4174547709213
+Seattle,San Diego,1690.2832401568667
+Seattle,San Francisco,1091.9684637732169
+Seattle,St. Louis,2750.48603844212
+Seattle,Washington,3747.3037506512433
+St. Louis,Atlanta,778.9752454400805
+St. Louis,Baltimore,1187.3780175981099
+St. Louis,Boston,1684.4868788412775
+St. Louis,Charlotte,925.816755073501
+St. Louis,Chicago,415.25657339783885
+St. Louis,Dallas,878.1628263040623
+St. Louis,Denver,1238.5077288681794
+St. Louis,Detroit,708.0776320387283
+St. Louis,Houston,1073.9248112750015
+St. Louis,Los Angeles,2562.1527779148028
+St. Louis,Miami,1719.5074707892418
+St. Louis,Minneapolis,721.1292540170878
+St. Louis,Orlando,1418.6659989900465
+St. Louis,Philadelphia,1309.1812821106814
+St. Louis,Phoenix,2030.6927061488527
+St. Louis,San Antonio,1264.8270600412063
+St. Louis,San Diego,2506.0453292966663
+St. Louis,San Francisco,2792.5475617113
+St. Louis,Seattle,2750.48603844212
+St. Louis,Tampa,1398.5161875720785
+St. Louis,Washington,1157.1950033030216
+Tampa,Atlanta,653.2655542302757
+Tampa,Baltimore,1355.5060393124343
+Tampa,Boston,1906.7187389781657
+Tampa,Charlotte,816.6324521360193
+Tampa,Chicago,1628.198132438448
+Tampa,Denver,2424.4334410257693
+Tampa,Detroit,1581.2493587761685
+Tampa,Houston,1257.2015843048418
+Tampa,Los Angeles,3472.759667359952
+Tampa,Miami,328.79133198291174
+Tampa,Minneapolis,2102.3414392224504
+Tampa,Philadelphia,1480.5032544126504
+Tampa,Phoenix,2877.843724477108
+Tampa,Portland,4018.3558551515875
+Tampa,San Antonio,1564.7981204569285
+Tampa,Seattle,4055.7056395526542
+Tampa,St. Louis,1398.5161875720785
+Tampa,Washington,1309.4701718553817
+Washington,Atlanta,880.4426978350568
+Washington,Boston,642.1828832683137
+Washington,Charlotte,532.5663280547369
+Washington,Chicago,984.6271975897037
+Washington,Denver,2375.021719807769
+Washington,Detroit,652.0705318666243
+Washington,Houston,1943.6017053798387
+Washington,Los Angeles,3719.0853255768675
+Washington,Miami,1479.8932055384055
+Washington,Minneapolis,1497.6331504876568
+Washington,Orlando,1221.6593767853703
+Washington,Philadelphia,191.80886670198305
+Washington,Phoenix,3184.484780719079
+Washington,Portland,3782.61036298944
+Washington,San Antonio,2191.7863847148114
+Washington,San Diego,3662.5217911497384
+Washington,San Francisco,3930.356887726172
+Washington,Seattle,3747.3037506512433
+Washington,St. Louis,1157.1950033030216
+Washington,Tampa,1309.4701718553817
