@@ -4,7 +4,7 @@
 
 
 
-![image-20201125122321321](images\image-20201125122321321.png)
+<img src='https://github.com/crystalwanyulee/plotly_dash_projects/blob/main/kartemap/images/image-20201125122321321.png?raw=true'>
 
 <div style="page-break-after: always; break-after: page;"></div>
 
