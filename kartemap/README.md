@@ -1,14 +1,14 @@
 
 
-# Kartemap Web Application
+## Kartemap Web Application
 
 
 
-![image-20201125122321321](C:\Users\admin\AppData\Roaming\Typora\typora-user-images\image-20201125122321321.png)
+![image-20201125122321321](images\image-20201125122321321.png)
 
 <div style="page-break-after: always; break-after: page;"></div>
 
-# Installation
+## Installation
 
 ```python
 plotly 4.12.0
@@ -19,7 +19,7 @@ dash-html-components 1.1.1
 
 
 
-# Get Started
+## Get Started
 
 Running the app locally
 
@@ -29,15 +29,15 @@ python app.py
 
 
 
-# Example
+## Example
 
 ![demo](images/demo.gif)
 
 
 
-# Introduction
+## Introduction
 
-### The top-right controller  
+#### The top-right controller  
 
 * In addition to select the start city and destination city, users can also add several intermediary cities between them. 
 
@@ -54,7 +54,7 @@ python app.py
 
 
 
-### Map
+#### Map
 
 * Before choosing any start city or destination city, the default map looks like the following. It shows all available city options. 
 
@@ -84,7 +84,7 @@ python app.py
 
   
 
-### Bottom City Information
+#### Bottom City Information
 
 * Show information of all cities in the route. Information includes images, city names, population, descriptions and `Learn More` links to Tripadvisor 
 
