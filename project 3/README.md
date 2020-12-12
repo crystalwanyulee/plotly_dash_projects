@@ -23,7 +23,7 @@ This chatbot contains 4 elements:
 
 ## Features
 
-#### 1. Chatting
+#### 1. Chat with Users
 
 <img src='images/demo3.gif'>
 
@@ -31,18 +31,18 @@ This chatbot contains 4 elements:
 
 
 
-#### 2. Easily Search for Movie Information
+#### 2. Provide Movie Information
 
 <img src='images/demo1.gif'>
 
 <br>
 
-#### 3. Recommend Movies
+#### 3. Recommend movies based on your preference
 
 <img src='images/demo2.gif'>
 
 
 
-#### 4. Smartly recommend movies
+#### 4. Offer recommendations by genre
 
 <img src='images/demo4.gif'>
