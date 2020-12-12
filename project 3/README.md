@@ -25,19 +25,19 @@ This chatbot contains 4 elements:
 
 #### 1. Easily Search for Movie Information
 
-<img src='images/demo1.gif' style="zoom: 80%;" >
+
 
 <br>
 
 #### 2. Recommend Movies
 
-<img src='images/demo2.gif' style="zoom:80%;" >
+
 
 
 
 ### 3. Chatting
 
-<img src='images/demo3.gif' style="zoom:80%;" >
+
 
 
 
@@ -45,4 +45,3 @@ This chatbot contains 4 elements:
 
 
 
-<img src='images/demo4.gif' style="zoom:80%;" >
