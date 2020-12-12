@@ -28,7 +28,7 @@ This chatbot contains 4 elements:
 <p align="center" style="font-size:12pt">
     <img src='images/demo1.gif' align="center" width="700" height="700">
 
-
+<img src='images/demo1.gif'>
 
 <br>
 
