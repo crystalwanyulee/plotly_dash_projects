@@ -23,23 +23,23 @@ This chatbot contains 4 elements:
 
 ## Features
 
-#### 1. Easily Search for Movie Information
+#### 1. Chatting
+
+<img src='images/demo3.gif'>
+
+
+
+
+
+#### 2. Easily Search for Movie Information
 
 <img src='images/demo1.gif'>
 
 <br>
 
-#### 2. Recommend Movies
+#### 3. Recommend Movies
 
 <img src='images/demo2.gif'>
-
-
-
-
-
-### 3. Chatting
-
-<img src='images/demo3.gif'>
 
 
 
