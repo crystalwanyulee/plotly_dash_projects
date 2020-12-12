@@ -20,7 +20,7 @@ This chatbot contains 4 elements:
 
 
 
-<img src='images/demo0.png'>
+<img src='images/demo00.png'>
 
 
 
